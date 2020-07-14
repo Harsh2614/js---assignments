@@ -1,0 +1,40 @@
+<html> 
+
+<head> 
+	<title> 
+		Current Day And Time 
+        </title>
+        <h3> Printing Current Day And Time</h3> 
+</head> 
+
+<body> 
+	<script> 
+		var myDate = new Date();         //Date Variable 
+		var myDay = myDate.getDay();    //Variable To Print Day
+		 
+                var weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' ];    //List Of Days In Week
+        
+                document.write("Today Is : " + weekday[myDay]);      //Printing Current Day
+         
+		document.write("<br/>"); 
+		
+		var hours = myDate.getHours();               //Hour Variable For Time 
+		var ampm = hours >= 12 ? 'PM' : 'AM';       //Variable To Print AM Or PM
+		hours = hours % 12;                        //Extracting Hours From Modulus Operator
+                hours = hours ? hours : 12; 
+        
+		var minutes = myDate.getMinutes();        //Variable To Print Minutes
+                minutes = minutes < 10 ? '0' + minutes : minutes;
+
+                var seconds = myDate.getSeconds();        //Variable To Print Minutes
+                seconds = seconds < 10 ? '0' + seconds : seconds;
+
+                var millisec = myDate.getMilliseconds();    //Variable To Print MilliSeconds 
+         
+                var myTime = hours + " " + ampm + " : " + minutes +  " : " + seconds + " : "+ millisec;       //Time Variable
+        
+		document.write("\tCurrent Time Is : " + myTime);       //Printing Current Time
+	</script> 
+</body> 
+
+</html> 
